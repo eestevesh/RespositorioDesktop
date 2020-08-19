@@ -1,20 +1,3 @@
-var getJSONData = function (url) {
-    var result = {};
-    return fetch(url)
-        .then(respuesta => {
-            if (respuesta.ok) {
-                return respuesta.json();
-            } else {
-                throw Error(respuesta.statusText);
-            }
-        })
-        .then(function (respuesta) {
-            result.status = 'ok';
-            result.data = respuesta;
-            return result;
-        })
-}
-
 var productsArray = [];
 
 function showProducts(array) {
