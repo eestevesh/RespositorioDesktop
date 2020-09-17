@@ -33,16 +33,95 @@
           <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
           <a class="dropdown-item" href="index.html">Cerrar sesión</a>
         </div>
-      </div>    </div>
+      </div>
+    </div>
   </nav>
+
   <div class="container p-5">
+    <div id="contenedor">
+
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Precio</dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+
+        <dt>Cantidad de productos vendidos</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+
+        <dt>Relacionados</dt>
+        <dd>
+          <div id="productosRelacionados"></div>
+        </dd>
+
+        <dt>Comentarios</dt>
+        <dd>
+          <div id="productComments"></div>
+        </dd>
+
+        <dt>
+          <label for="productNewComment"> 
+            Añade un comentario
+        </label>
+        </dt>
+        <dd>
+          <div id="addComment">
+            <div class="col-md-12 mb-3">
+              <div class="row">
+                <textarea class="form-control w-20" placeholder="Escribe aquí tu comentario" id="productNewComment" row="3"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+            <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+            <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+            <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+            <span class="fa fa-star" id="star5" onclick="add(5)"></span>
+          </div>
+          <div>
+            <br>
+            <button class="btn btn-primary btn-lg" type="submit" id="button">Comentar</button>
+          </div>
+        </dd>
+
+
+
+      </dl>
+
+    </div>
+
+    <!--
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
       <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
       <hr>
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
+-->
   </div>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
