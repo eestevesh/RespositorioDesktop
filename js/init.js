@@ -46,7 +46,6 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 
-  let usuario = `<a class="py-2 d-none d-md-inline-block" href="#">` + localStorage.getItem("usuario"); + `</a>`
-  document.getElementById("registro").innerHTML += usuario;
+  document.getElementById("dropdownMenuLink").innerHTML = localStorage.getItem("usuario");
     
 });
