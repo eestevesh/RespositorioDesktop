@@ -84,6 +84,8 @@ function add(sno) {
         var cur = document.getElementById("star" + i)
         if (cur.className == "fa fa-star") {
             cur.className = "fa fa-star checked"
+        } else {
+            cur.className = "fa fa-star"
         }
     }
 
@@ -104,7 +106,7 @@ function mostrarRelacionados(array) {
                 htmlRelacionados += `
                 <div class= "col-lg-3 col-md-4 col-6 border">
                     <div id="relatedProductImg" class= "row">
-                        <img class="img-fluid p-2" src="`+relatedProduct.imgSrc+`">
+                        <img class="img-fluid p-2" src="`+ relatedProduct.imgSrc + `">
                     </div>                   
                     <div "relatedProductInfo" class= "row p-2">
                     <p><strong>`+ relatedProduct.name + `</strong></p> 
@@ -157,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("button").addEventListener("click", function () {
 
-        // agregar fecha en el comentario
+        // definir fecha en el comentario
         var today = new Date();
         var mes = parseInt(today.getMonth() + 1);
 
@@ -167,40 +169,46 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         today = today.getFullYear() + '-' + mes + '-' + today.getDate() + '  ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-        //agregar usuario
+        //definir usuario
         let usuario = localStorage.getItem("usuario");
 
-        //agregar comentario
-        let newComment = document.getElementById("productNewComment").value; 
-
-        //agregar puntaje
-        
+        //definir puntaje
         let newScore = showScore(add(numero));
 
+        //definir comentario
+        let newComment = document.getElementById("productNewComment").value;
 
+        //agregar usuario, fecha, comentario y puntaje a comentarios 
         let htmlContentToAppend = ` 
-        <div> 
-            <br>
-            <p>
-                <strong>Usuario:</strong> ` + usuario + `. 
-                <strong> Fecha:</strong> ` + today + `
-            </p>
-            <p>
-                <strong>Comentario:</strong> ` + newComment + `
-            </p>
-            <div>
-            ` + newScore + `
-            </div>
-            <br>
-            
-        </div> 
-    `
+            <div> 
+                <br>
+                <p>
+                    <strong>Usuario:</strong> ` + usuario + `. 
+                    <strong> Fecha:</strong> ` + today + `
+                </p>
+                <p>
+                    <strong>Comentario:</strong> ` + newComment + `
+                </p>
+                <div>
+                ` + newScore + `
+                </div>
+                <br>
+                
+            </div> 
+            `
 
         document.getElementById("productComments").innerHTML += htmlContentToAppend;
-        
+
+
         //borrar textarea
         document.getElementById("productNewComment").value = "";
 
+        //borrar estrellas
+        document.getElementById("star1").className = "fa fa-star";
+        document.getElementById("star2").className = "fa fa-star";
+        document.getElementById("star3").className = "fa fa-star";
+        document.getElementById("star4").className = "fa fa-star";
+        document.getElementById("star5").className = "fa fa-star";
     });
 
 });
