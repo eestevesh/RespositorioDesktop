@@ -60,7 +60,7 @@ function comprobarUnidades() {
     for (let i = 0; i < cantidades.length; i++) {
         cantidades[i].addEventListener('change', function () {
             document.getElementById("productSubtotal-" + i).innerHTML =
-                'UYU ' + cantidades[i].value * articlesArray[i].unitCost;
+                articlesArray[i].currency + " " + cantidades[i].value * articlesArray[i].unitCost;
                 
             updateAllSubTotal();
             calcularTotal();
@@ -110,6 +110,9 @@ function pagarEnPesos() {
     updateAllSubTotal();
     calcularTotal();
 }
+
+
+
 
 
 
