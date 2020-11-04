@@ -6,24 +6,27 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-function sortCategories(criteria, array){
+var categoriesArray = [];
+
+
+function sortCategories(criteria, array){ //funcion que ordena segun el criterio
     let result = [];
-    if (criteria === ORDER_ASC_BY_NAME)
+    if (criteria === ORDER_ASC_BY_NAME) // criterio: por nombre ascendente
     {
-        result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+        result = array.sort(function(a, b) {  // ordena de forma ascendente
+            if ( a.name < b.name ){ return -1; } // compara dos palabras y coloca la menor (antes en abcedario) previo
+            if ( a.name > b.name ){ return 1; } // coloca la mayor despues
             return 0;
         });
-    }else if (criteria === ORDER_DESC_BY_NAME){
+    }else if (criteria === ORDER_DESC_BY_NAME){ // criterio: por nombre descendente (de Z a A)
         result = array.sort(function(a, b) {
             if ( a.name > b.name ){ return -1; }
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_COUNT){
+    }else if (criteria === ORDER_BY_PROD_COUNT){ // criterio: por numero
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productCount);
+            let aCount = parseInt(a.productCount); // pasa el string a numero y lo guarda en una variable
             let bCount = parseInt(b.productCount);
 
             if ( aCount > bCount ){ return -1; }
@@ -78,6 +81,8 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
     //Muestro las categorías ordenadas
     showCategoriesList();
 }
+
+console.log(categoriesArray);
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
