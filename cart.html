@@ -59,230 +59,303 @@
     <div class="text-center p-4">
       <h2>Carrito</h2>
       <p class="lead">Verás aquí todos los productos ingresados al carrito.</p>
+    </div>
+    <br>
 
-      <!--articulos-->
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Costo</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Subtotal</th>
-          </tr>
-        </thead>
-        <tbody id="cart-products">
-        </tbody>
-      </table>
-
-      <div class="row float-right">
-        <div class="col">
-          <div class="d-flex w-100 justify-content-between">
-            <small class="text-muted">Cotización del dólar: UYU 40</small>
-          </div>
-        </div>
-      </div>
-      <br>
+    <!--articulos-->
 
 
+    <div class="row justify-content-md-center">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Detalles de la compra</h4>
 
 
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Subtotal</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody id="cart-products">
+          </tbody>
+        </table>
 
-      <!--costos-->
-      <div class="row">
-        <div class="col">
-          <h4 class="mb-3">Costos</h4>
-        </div>
-      </div>
-
-      <div>
-        <div class="row d-flex flex-row-reverse">
-          <div class="p-2">
-            <div class="col">
-              <div class="col-sm-2">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="pagarEnDolares" id="pagarEnDolares" value="option1"
-                    onclick="pagarEnDolares()">
-                  <label class="form-check-label" for="pagarEnDolares">
-                    Dólares
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="pagarEnDolares" id="pagarEnPesos" value="option2" checked
-                    onclick="pagarEnPesos()">
-                  <label class="form-check-label" for="pagarEnPesos">
-                    Pesos
-                  </label>
-                </div>
-              </div>
+        <div class="row float-right">
+          <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+              <small class="text-muted">Cotización del dólar: UYU 40</small>
             </div>
           </div>
         </div>
-      </div>
+        <br>
+
+        <hr class="mb-4">
+
+        <!-- Método de envío -->
+
+        <h5 class="mb-3">Tipo de envío</h5>
+        <div class="d-block my-3">
+          <div class="custom-control custom-radio">
+            <input id="premiumRadio" name="publicationType" type="radio" class="custom-control-input" 
+              required="">
+            <label class="custom-control-label" for="premiumRadio"><b>Premium</b><i>: en 24 horas</i>
+              <b>(15%)</b></label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="expressRadio" name="publicationType" type="radio" class="custom-control-input" required="">
+            <label class="custom-control-label" for="expressRadio"><b>Express</b><i>: de dos días a una semana</i>
+              <b>(10%)</b></label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input id="estandarRadio" name="publicationType" type="radio" class="custom-control-input" required="">
+            <label class="custom-control-label" for="estandarRadio"><b>Estandar</b><i>: de una a dos semanas</i>
+              <b>(5%)</b></label>
+          </div>
+        </div>
+
+        <hr class="mb-4">
 
 
-      <div>
+
+
+        <!--costos-->
+
+
+        <div class="row">
+          <div class="col">
+            <h4 class="mb-3">Costos</h4>
+          </div>
+        </div>
+
+
+
+
+
         <div class="row d-flex p-2">
           <div class="col">
-            <ul class="list-group mb-3">
+            <ul class="list-group mb-0">
               <li class="list-group-item justify-content-between d-flex">
                 <h5>SubTotal </h5><span id="subtotal"></span>
               </li>
               <li class="list-group-item justify-content-between d-flex">
-                <h5>Total </h5><span id="total"></span>
+                <h5>Envío </h5><span id="envio"></span>
               </li>
               <li class="list-group-item justify-content-between d-flex">
-                <h5>Envío </h5><span id="envio"></span>
+                <h5>Total </h5><span id="total"></span>
               </li>
             </ul>
 
-            
+
           </div>
         </div>
-      </div>
-    </div>
 
 
 
-    <div class="container">
+        <!--           <div class="row d-flex flex-row-reverse">
+            <div class="p-0">
+              <div class="col">
+                <div class="col-sm-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pagarEnDolares" id="pagarEnDolares"
+                      value="option1" onclick="pagarEnDolares()">
+                    <label class="form-check-label" for="pagarEnDolares">
+                      Dólares
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pagarEnDolares" id="pagarEnPesos" value="option2"
+                      checked onclick="pagarEnPesos()">
+                    <label class="form-check-label" for="pagarEnPesos">
+                      Pesos
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+ -->
 
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Seleccione su método de pago
-      </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"> <b>Seleccione su método de pago </b> </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+        <hr class="mb-4">
+
+
+
+        <div class="row justify-content">
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Método de pago</h4>
+
+
+
+            <div class="container pl-0">
+
+              <!-- Button trigger modal -->
+              <button type="button" class="m-1 btn btn-link pl-0" data-toggle="modal" data-target="#exampleModal">
+                Ver opciones
               </button>
-            </div>
-      
-            <div class="modal-body">
-              <div class="form-check" id="tarjetas">
-                <input class="form-check-input" type="radio" name="Radios" id="radioTarjetas" value="option1"
-                  checked>
-                <label class="form-check-label" for="radioTarjetas">
-                  <b>Tarjeta débito/crédito</b>
-                </label>
 
-                <br><br>
+              
 
-                <div class="form-group row">
-                  <label for="inputName" class="col-sm-2 col-form-label">Nombre:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName" placeholder="Tal cual indica la tarjeta"
-                      required>
-                  </div>
-                </div>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel"> <b>Seleccione su método de pago </b> </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
 
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label" for="compania">Compañía:</label>
-                  <div class="col-sm-10">
-                    <select class="custom-select mr-sm-2" id="compania" required>
-                      <option selected>Elija una opición...</option>
-                      <option value="1">Visa</option>
-                      <option value="2">Master Card</option>
-                      <option value="3">Oca</option>
-                    </select>
-                  </div>
-                </div>
+                    <div class="modal-body">
+                      <div class="form-check" id="tarjetas">
+                        <input class="form-check-input" type="radio" name="radios" id="radioTarjetas" value="option1"
+                          checked>
+                        <label class="form-check-label" for="radioTarjetas">
+                          <b>Tarjeta débito/crédito</b>
+                        </label>
 
-                <div class="form-group row">
-                  <label for="inputNumSerie" class="col-sm-2 col-form-label">Serie:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNumSerie" maxlength="16" minlength="16" required
-                      placeholder="Ingrese los 16 dígitos">
-                  </div>
-                </div>
+                        <br><br>
+
+                        <div class="form-group row">
+                          <label for="inputName" class="col-sm-2 col-form-label">Nombre:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName"
+                              placeholder="Tal cual indica la tarjeta" required>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" for="compania">Compañía:</label>
+                          <div class="col-sm-10">
+                            <select class="custom-select mr-sm-2" id="compania" required>
+                              <option selected>Elija una opición...</option>
+                              <option value="1">Visa</option>
+                              <option value="2">Master Card</option>
+                              <option value="3">Oca</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="inputNumSerie" class="col-sm-2 col-form-label">Serie:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputNumSerie" maxlength="16" minlength="16"
+                              required placeholder="Ingrese los 16 dígitos">
+                          </div>
+                        </div>
 
 
 
-                <div class="form-group row" id="expiration-date">
-                  <label class="col-sm-2 col-form-label">Validez:</label>
+                        <div class="form-group row" id="expiration-date">
+                          <label class="col-sm-2 col-form-label">Validez:</label>
 
-                  <div class="col-sm-5">
-                    <select class="custom-select mr-sm-2" id="validezMes" required>
-                      <option selected>Mes</option>
-                      <option value="01">Enero</option>
-                      <option value="02">Febrero </option>
-                      <option value="03">Marzo</option>
-                      <option value="04">Abril</option>
-                      <option value="05">Mayo</option>
-                      <option value="06">Junio</option>
-                      <option value="07">Julio</option>
-                      <option value="08">Agosto</option>
-                      <option value="09">Septiembre</option>
-                      <option value="10">Octubre</option>
-                      <option value="11">Noviembre</option>
-                      <option value="12">Diciembre</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-5">
-                    <select class="custom-select mr-sm-2" id="ValidezAnio" required>
-                      <option selected>Año</option>
-                      <option value="16"> 2020</option>
-                      <option value="17"> 2021</option>
-                      <option value="18"> 2022</option>
-                      <option value="19"> 2023</option>
-                      <option value="20"> 2024</option>
-                      <option value="21"> 2025</option>
-                    </select>
+                          <div class="col-sm-5">
+                            <select class="custom-select mr-sm-2" id="validezMes" required>
+                              <option selected>Mes</option>
+                              <option value="01">Enero</option>
+                              <option value="02">Febrero </option>
+                              <option value="03">Marzo</option>
+                              <option value="04">Abril</option>
+                              <option value="05">Mayo</option>
+                              <option value="06">Junio</option>
+                              <option value="07">Julio</option>
+                              <option value="08">Agosto</option>
+                              <option value="09">Septiembre</option>
+                              <option value="10">Octubre</option>
+                              <option value="11">Noviembre</option>
+                              <option value="12">Diciembre</option>
+                            </select>
+                          </div>
+                          <div class="col-sm-5">
+                            <select class="custom-select mr-sm-2" id="validezAnio" required>
+                              <option selected>Año</option>
+                              <option value="16"> 2020</option>
+                              <option value="17"> 2021</option>
+                              <option value="18"> 2022</option>
+                              <option value="19"> 2023</option>
+                              <option value="20"> 2024</option>
+                              <option value="21"> 2025</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="form-check" id="transferencia">
+                        <input class="form-check-input" type="radio" name="radios" id="radioTransferencia"
+                          value="option2">
+                        <label class="form-check-label" for="radioTransferencia">
+                          <b>Transferencia bancaria</b>
+                        </label>
+
+
+                        <br><br>
+
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 col-form-label" for="banco">Banco:</label>
+                          <div class="col-sm-10">
+                            <select class="custom-select mr-sm-2" id="banco" required disabled>
+                              <option selected>Elija una opición...</option>
+                              <option value="1">Brou</option>
+                              <option value="2">Itau</option>
+                              <option value="3">BBVA</option>
+                              <option value="4">Santander</option>
+                              <option value="5">Scotiabank</option>
+                              <option value="6">HSBC</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Por favor ingresa una categoría válida.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="inputCuenta" class="col-sm-2 col-form-label">Cuenta:</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputCuenta" placeholder="Ingrese aquí" disabled
+                              required>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div class="modal-footer" id="modalFooter">
+                      <button type="button" id="cerrarModal" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      <button type="button" id="guardarDatosModal" class="btn btn-primary" dismiss="modal">Guardar</button>
+                    </div>
                   </div>
                 </div>
               </div>
-
-
-              <div class="form-check" id="transferencia">
-                <input class="form-check-input" type="radio" name="radios" id="radioTransferencia" value="option2">
-                <label class="form-check-label" for="radioTransferencia">
-                  <b>Transferencia bancaria</b>
-                </label>
-
-
-                <br><br>
-
-
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label" for="banco">Banco:</label>
-                  <div class="col-sm-10">
-                    <select class="custom-select mr-sm-2" id="banco" required>
-                      <option selected>Elija una opición...</option>
-                      <option value="1">Brou</option>
-                      <option value="2">Itau</option>
-                      <option value="3">BBVA</option>
-                      <option value="4">Santander</option>
-                      <option value="5">Scotiabank</option>
-                      <option value="3">HSBC</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="inputCuenta" class="col-sm-2 col-form-label">Cuenta:</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputCuenta" placeholder="Ingrese aquí" required>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
           </div>
         </div>
+
+
+        <hr class="mb-4">
+
+        <div class="row justify-content">
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Confirmar compra</h4>
+
+            <button class="btn btn-primary btn-lg" type="submit" id="confirmarCompra" onclick="comprobarCompra()">Aceptar</button>
+          </div>
+        </div>
+
+
       </div>
+
     </div>
   </div>
+
+
 
   <!-- <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
@@ -294,6 +367,8 @@
   </div> -->
 
   <br><br>
+
+
 
   <footer class="text-muted bg-light">
     <div class="container">
