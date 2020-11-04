@@ -102,9 +102,11 @@ function mostrarRelacionados(array) {
             for (let i = 0; i < array.length; i++) {
                 let relatedProductPosition = array[i];
                 let relatedProduct = productList[relatedProductPosition];
+                
+                //col-lg-3 col-md-4 col-6
 
                 htmlRelacionados += `
-                <div class= "col-lg-3 col-md-4 col-6 border">
+                <div class= "col-md-3 col-sm-9 border ml-2 mr-2">
                     <div id="relatedProductImg" class= "row">
                         <img class="img-fluid p-2" src="`+ relatedProduct.imgSrc + `">
                     </div>                   
